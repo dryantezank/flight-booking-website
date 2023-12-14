@@ -25,7 +25,7 @@ class Database {
         self::$dns = "{${self::$database}}:host={${self::$host}};dbname={${self::$dbname}};port={${self::$port}}";
     }
 
-    public static function connect() : PDO {
+    public static function connect() {
         if(!isset(self::$db)) {
             try {
                 self::$db = new PDO(self::$dns, self::$username, self::$password, self::$options);
@@ -34,9 +34,9 @@ class Database {
                 exit();
             }
         }
-        return self::$dbname;
+        return self::$db;
     }
-    public static function close_connect() : PDO | null
+    public static function close_connect()
     {
         self::$db = null;
         return self::$db;
@@ -63,7 +63,7 @@ class Database {
         }
         self::disconnect();
     }*/
-    public static function execute_nonquery(string $sql, array $option = array()) : array|bool {
+    public static function execute_nonquery(string $sql, array $option = array()) {
         if(self::$db !== null) {
             try {
                 $cmd = self::$db->prepare($sql);
@@ -74,6 +74,7 @@ class Database {
                 }
                 $cmd->execute();;
                 $result = $cmd->fetchAll();
+                return $result;
             } catch (PDOException $e) {
                 echo "Error: {$e->getMessage()}";
                 exit();
@@ -82,7 +83,6 @@ class Database {
             echo "Error When Connect To Database";
         }
         self::close_connect();
-        return false;
 
     }
 
