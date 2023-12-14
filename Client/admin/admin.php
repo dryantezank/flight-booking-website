@@ -5,32 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-    include '../page/link.libary.php';
-    include '../page/setting.php';
-    ?>
-    <title>Trang Quản Trị Minh Nhat Airways</title>
+    <!-- link css bootstrap -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <title>Trang Quản Trị PNTN Airways</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./admin.php"><img src="../page/images/logo/logo.png" alt="Logo" width="80px"></a>
+        <a class="navbar-brand" href="./admin.php"><img src="../assets/images/Logo.png" alt="Logo" width="100px"></a>
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <?php
-                        session_start();
 
-                        if (isset($_SESSION['lg-username'])) {
-                            echo '<span id="username">' . $_SESSION['lg-username'] . '</span>';
-                        }
-                        ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="../page/home.php">Thoát</a>
+                        <a class="dropdown-item" href="../pages/home.php">Thoát</a>
                     </div>
                 </li>
             </ul>
@@ -77,9 +69,9 @@
             </div>
         </div>
     </div>
-    <?php
-    include '../page/script.libary.php';
-    ?>
+    <!-- link js bootstrap -->
+    <script src="../assets/js/bootstrap.js"></script> 
+    
 </body>
 
 </html>
