@@ -9,7 +9,7 @@ class Database {
     private static string $username;
     private static string $password;
     private static array $options;
-    private static PDO $db;
+    private static PDO | null $db;
     private function __construct()
     {
         self::$database = $_ENV["DATABASE"];
@@ -36,7 +36,7 @@ class Database {
         }
         return self::$dbname;
     }
-    public static function close_connect() : PDO
+    public static function close_connect() : PDO | null
     {
         self::$db = null;
         return self::$db;
