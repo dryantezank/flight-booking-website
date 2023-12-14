@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php
+        include './setting.php';
         include './header.php'; 
 
         if(isset($_POST['login-username'])&& isset($_POST['login-password']))
@@ -26,15 +27,15 @@
 
     <div class="carousel-inner">
         <div class="carousel-item-active">
-            <img src="" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner1.png" alt="" class="d-block w-100">
         </div>
 
         <div class="carousel-item">
-            <img src="" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner2.png" alt="" class="d-block w-100">
         </div>
 
         <div class="carousel-item">
-            <img src="" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner3.png" alt="" class="d-block w-100">
         </div>
     </div>
     <a href="#banner" role="button" class="carousel-control-prev" data-slide="prev">

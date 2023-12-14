@@ -38,7 +38,27 @@
                         <i class="fab fa-facebook"></i>
                     </a>
                 </li>
+
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+
+                <li class="list-inline-item">
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
             </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p>
+                &copy; Tất cả các quyền được bảo lưu
+            </p>
         </div>
     </div>
 </footer>
