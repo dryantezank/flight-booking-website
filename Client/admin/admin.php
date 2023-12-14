@@ -65,7 +65,7 @@
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'locate'){
-                    include './locate_adm.php';
+                    include './locate_admin.php';
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'flights'){
