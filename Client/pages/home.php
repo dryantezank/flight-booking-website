@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>...</title>
+
+    <?php
+        include'./link_libary.php';
+    ?>
+
+    <style>
+        .text-center
+        {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <?php
         include './setting.php';
         include './header.php'; 
 
-        if(isset($_POST['login-username'])&& isset($_POST['login-password']))
+        //kiểm tra các biến session có được thiết lập hay chưa
+        if(isset($_POST['login-username']) && isset($_POST['login-password']))
         {
             $username = $_POST['login-username'];
         }
@@ -19,7 +31,7 @@
 <!--banner-->
 
 <section class="carousel slide" data-ride="carousel" id="banner">
-    <ol>
+    <ol class="carousel-indicators">
         <li data-target="#banner" data-slide-to ="0" class="active"></li>
         <li data-target="#banner" data-slide-to="1"></li>
         <li data-target="#banner" data-slide-to="2"></li>
@@ -27,15 +39,15 @@
 
     <div class="carousel-inner">
         <div class="carousel-item-active">
-            <img src="../assets/images/banner/banner1.png" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner1.png" alt="Banner 1" class="d-block w-100">
         </div>
 
         <div class="carousel-item">
-            <img src="../assets/images/banner/banner2.png" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner2.png" alt="" class="d-block w-100" alt="Banner 2">
         </div>
 
         <div class="carousel-item">
-            <img src="../assets/images/banner/banner3.png" alt="" class="d-block w-100">
+            <img src="../assets/images/banner/banner3.png" alt="" class="d-block w-100" alt="Banner 3">
         </div>
     </div>
     <a href="#banner" role="button" class="carousel-control-prev" data-slide="prev">
@@ -50,7 +62,7 @@
 </section>
     
 <!--Quang cao & noi dung-->
-<section class="jumbotron text-center">
+<section class="jumbotron text-center" id="welcome">
     <div class="container">
         <h1 class="display-4">Chào mừng bạn đến với bình nguyên vô tận</h1>
         <p class="lead">
@@ -62,6 +74,10 @@
 
 <?php 
     include './footer.php';
+    include './search_flights.php';
+    include './intro.php';
+    include './script_libary.php';
+    include './list_flights.php';
 ?>
 </body>
 </html>
