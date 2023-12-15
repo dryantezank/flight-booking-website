@@ -55,5 +55,86 @@
             }
         }
     ?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a href="#login" class="nav-link active" id="login-tab" data-toggle="tab" role="tab"
+                                aria-controls="login" aria-selected="true">
+                                Đăng nhập
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#register" class="nav-link" id="login-tab" data-toggle="tab" role="tab"
+                                aria-controls="register" aria-selected="false">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="tab-contend">
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <h5 class="card-title">Đăng nhập</h5>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="login-username">Tài khoản</label>
+                                        <input type="text" class="form-control" id="login-username" name="login-username">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="login-password">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="login-password" name="login-password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        Đăng nhập
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <h5 class="card-title">Đăng ký</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="register-username">Tên tài khoản</label>
+                                        <input type="text" class="form-control" id="register-username">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="register-password">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="register-password">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="regiter-email">Địa chỉ Email</label>
+                                        <input type="email" class="form-control" id="register-email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="register-fullname">Họ tên</label>
+                                        <input type="text" class="form-control" id="register-fullname">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">
+                                        Đăng ký
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+        include './script_libary.php';
+    ?>
 </body>
 </html>

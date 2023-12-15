@@ -51,6 +51,8 @@
         ?>
         <a href="./home.php#booking" class="btn btn-primary mt-3">Quay lại trang tìm kiếm</a>
     </div>
-   
+   <?php
+    include './script_libary.php';
+   ?>
 </body>
 </html>
