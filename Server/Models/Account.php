@@ -26,9 +26,7 @@ class Account {
             $sql = "SELECT * FROM account";
             $cmd = Database::connect()->prepare($sql);
             $cmd->execute();
-            $result = $cmd->fetchAll();
-            Database::close_connect();
-            return $result;
+            return $cmd->fetchAll();
         } catch(PDOException $e) {
             echo "<p>Lỗi truy vấn: {$e->getMessage()}</p>";
             exit();
@@ -42,7 +40,6 @@ class Account {
             $cmd = Database::connect()->prepare($sql);
             $cmd->bindValue(":id", $id);
             $result = $cmd->fetch();
-            Database::close_connect();
             return $result;
         } catch(PDOException $e) {
             echo "<p>Lỗi truy vấn: {$e->getMessage()}</p>";
