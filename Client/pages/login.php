@@ -40,7 +40,7 @@
                 if (password_verify($login_pass, $row['MatKhau']))
                 {
                     // tạo và gán giá trị cho các biến session
-                    $_SESSION["lg-username"] = $row['tenDangNhap'];
+                    $_SESSION["lg-username"] = $row['TenDangNhap'];
                     $_SESSION["role"] = $row['Role'];
 
                     //nếu đăng nhập thành công thì chuyển về trang home
