@@ -147,9 +147,18 @@ class Flight {
         }
     }
      // Caculator flight duration time by departure time & arrivaltime
-    // return hours
-//    public function calulateFlightDuration(DateTime $departuretime, DateTime $arrivaltime) : int {
-//    }
+    // return string duration of flight
+    public function getStringFlightDuration(DateTime $departuretime, DateTime $arrivaltime) : string {
+        $result = $departuretime->diff($arrivaltime);
+        return $result->format("H:i:s");
+    }
+
+    public function getSecondsFlightDuration(DateTime $departuretime, DateTime $arrivaltime) : float | int{
+        $departure = $departuretime->format("H:i:s");
+        $arrival = $arrivaltime->format("H:i:s");
+        return abs(strtotime($departure) - strtotime($arrival));
+    }
+
 }
 
 ?>
