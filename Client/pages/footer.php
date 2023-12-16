@@ -7,7 +7,7 @@
                 <p>Điện thoại: 0898 985 123</p>
                 <p>Email: tpnn@agu.vn</p>
             </div>
-        </div>
+        
 
         <div class="col-md-4">
             <h4>Liên kết</h4>
@@ -61,4 +61,5 @@
             </p>
         </div>
     </div>
+</div>
 </footer>

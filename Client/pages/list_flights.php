@@ -2,6 +2,21 @@
 <?php 
     include './setting.php';
     //truy vấn dữ liệu
+    $sql = "SELECT
+        cb.SoHieu AS SoHieuChuyenBay,
+        dd1.TenDiaDiem AS DiemKhoiHanh,
+        dd2.TenDiaDiem AS DiemDen,
+        dd2.TenHinhAnh AS TenAnhDiemDen,
+        cb.ThoiGianKH AS ThoiGianKhoiHanh,
+        cb.ThoiGianDen AS ThoiGianDen,
+        cb.ChoNgoi AS SoGheTrong,
+        cb.GiaVe AS GiaVe
+        FROM
+        tb_ChuyenBay cb
+        INSERT JOIN tb_DiaDiem dd1 ON cb.DiemKhoiHanh = dd1.ID
+        INSERT JOIN tb_DiaDiem dd2 ON cb.DiemDen = dd2.ID
+        LIMIT 6;
+    ";
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0)
