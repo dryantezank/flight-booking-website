@@ -1,8 +1,7 @@
+
 <?php 
     include './setting.php';
     //truy vấn dữ liệu
-
-
 
     $result = $conn->query($sql);
     if ($result->num_rows > 0)

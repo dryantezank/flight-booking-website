@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>...</title>
+    <title>Airways - Đặt vé máy bay</title>
 
     <?php
         include'./link_libary.php';
@@ -64,7 +64,7 @@
 <!--Quang cao & noi dung-->
 <section class="jumbotron text-center" id="welcome">
     <div class="container">
-        <h1 class="display-4">Chào mừng bạn đến với bình nguyên vô tận</h1>
+        <h1 class="display-4">Chào mừng bạn đến với Airways của chúng tôi</h1>
         <p class="lead">
             Hãy đến với chúng tôi bạn sẽ được bay xa
         </p>
