@@ -36,15 +36,15 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./assets/images/banner/banner1.png" class="d-block w-100" alt="Banner 1" />
+                <img src="../assets/images/banner/banner1.png" class="d-block w-100" alt="Banner 1" />
             </div>
 
             <div class="carousel-item">
-                <img src="./assets/images/banner/banner2.png" class="d-block w-100" alt="Banner 2" />
+                <img src="../assets/images/banner/banner2.png" class="d-block w-100" alt="Banner 2" />
             </div>
 
             <div class="carousel-item">
-                <img src="./assets/images/banner/banner3.png" class="d-block w-100" alt="Banner 3" />
+                <img src="../assets/images/banner/banner3.png" class="d-block w-100" alt="Banner 3" />
             </div>
         </div>
         
