@@ -61,23 +61,23 @@
             <div class="col-md-10">
                 <?php
                     if(isset($_GET['pages']) && $_GET['pages'] == 'user'){
-                        include './user_adm.php';
+                        include '../admin/user_admin.php';
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'locate'){
-                    include './locate_admin.php';
+                    include '../admin/locate_admin.php';
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'flights'){
-                    include './flights_adm.php';
+                    include '../admin/flight_admin.php';
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'customer'){
-                    include './customer_adm.php';
+                    include '../admin/customer_admin.php';
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'comment'){
-                        include './comment_adm.php';
+                        include '../admin/comment_adm.php';
                         }
                 ?>
             </div>

@@ -89,6 +89,22 @@ class Daily
         }
     }
 
+    public function getDailyById(int $id) {
+        try {
+            $sql = "SELECT * FROM flightbooking.daily WHERE id=:id";
+            $cmd = Database::connect()->prepare($sql);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $result = $cmd->fetchAll();
+            Database::close_connect();
+            return $result;
+        } catch (PDOException $e) {
+            echo "<p>Lỗi truy vấn: {$e->getMessage()}</p>";
+            exit();
+        }
+    }
+
+
     public function addDaily(string $title, string $content, int $author, DateTime $date): bool
     {
         try {

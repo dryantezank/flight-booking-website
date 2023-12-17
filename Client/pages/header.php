@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a href="navbar-brand" href="#">
-            <img src="../assets/images/logo/logo.png" alt="" width="100px">
+            <img src="../assets/images/logo/logo.png" alt="Airways" width="100px">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,7 +16,7 @@
                         if($role == 'ADMIN')
                         {
                             echo' "<li class="nav-item">
-                            <a href="" class="nav-link">Dashboard</a>;
+                            <a href="../admin/admin.php" class="nav-link">Dashboard</a>;
                             </li>';
                         }
                     }
@@ -38,20 +38,24 @@
                 </li>
 
                 <?php
+
+                // kiem tra xem nguoi dùng da dang nhap chua
                 if(isset($_SESSION["lg-username"]))
                 {
+                    // nguoi dung dã dang nhap, hien thi ten nguoi dung và drop-down menu "dang xuat"
                     $login_username = $_SESSION["lg-username"];
 
                     echo '<li class="nav-item dropdown">';
                     echo '<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
                     echo '<span id="username">Xin chào, '.$login_username.'</span> </a>';
-                    echo '<a class="dropdown-item" href="">Đăng Xuất</a> </div> </li>';
+                    echo '<a class="dropdown-item" href="../page/logout.php">Đăng Xuất</a> </div> </li>';
                 }
                 else
                 {
+                    // nguoi dung chua dang nhap, hien thi nut dang nhap và dang ky
                     echo '<div class="user-actions">';
-                    echo '<a href="" class="btn btn-primary">Đăng Nhập</a>';
-                    echo '<a href="" class="btn btn-secondary">Đăng Ký</a>';
+                    echo '<a href="./login.php" class="btn btn-primary">Đăng Nhập</a>';
+                    echo '<a href="./login.php#register" class="btn btn-secondary">Đăng Ký</a>';
                     echo'</div>';
                 }
                 ?>
