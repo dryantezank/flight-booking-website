@@ -3,7 +3,7 @@
     <div class="container">
         <h2 class="text-center">Tìm Kiếm Chuyến Bay</h2>
         
-        <form method="post" action="./search_result.php">
+        <form method="post" action="../pages/search_result.php">
             <div class="form-group">
                 <label for="from">Nơi đi:</label>
                 <select name="from" id="from" class="from-control">
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="to">Nơi đến:</label>
                 <select name="to" id="to" class="form-control">
-                    <option value="None">Chọn nơi đi</option>
+                    <option value="None">Chọn nơi điến</option>
 
                     <?php
                         include './setting.php';

@@ -77,7 +77,7 @@
                     }
 
                     if(isset($_GET['pages']) && $_GET['pages'] == 'comment'){
-                        include '../admin/comment_adm.php';
+                        include '../admin/feedback.php';
                         }
                 ?>
             </div>
