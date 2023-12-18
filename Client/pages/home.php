@@ -61,7 +61,7 @@
     <!-- quảng cáo và nội dung -->
     <section id="welcome" class="jumbotron text-center">
         <div class="container">
-            <h1 class="display-4">Chào mừng đến với Airways chuyến đi cùng tôi</h1>
+            <h1 class="display-4">Chào mừng đến với Airways chúng tôi</h1>
             <p class="lead">
                 Hãy khám phá những chuyến bay tuyệt vời cùng chúng tôi
             </p>
@@ -69,11 +69,11 @@
         </div>
     </section>
     <?php
-        include 'search_flights.php';
-        include './list_flights.php';
-        include './intro.php';
-        include './footer.php';
-        include './link_libary.php';
+        include '../pages/search_flights.php';
+        include '../pages/list_flights.php';
+        include '../pages/intro.php';
+        include '../pages/footer.php';
+        include '../pages/link_libary.php';
     ?>
 </body>
 

@@ -10,7 +10,7 @@
                     <option value="None">Chọn nơi đi</option>
 
                     <?php
-                        include './setting.php';
+                        include '../pages/setting.php';
                         $sql = "SELECT * FROM tb_DiaDiem";
                         $result = $conn->query($sql);
 
@@ -31,7 +31,7 @@
                     <option value="None">Chọn nơi điến</option>
 
                     <?php
-                        include './setting.php';
+                        include '../pages/setting.php';
 
                         $sql = "SELECT * FROM tb_DiaDiem";
                         $result = $conn-> query($sql);

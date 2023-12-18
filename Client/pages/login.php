@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký / Đăng nhập</title>
     <?php
-        include './link_libary.php';
+        include '../pages/link_libary.php';
     ?>
 
     <style>
@@ -28,7 +28,7 @@
             $login_name = $_POST["login-username"];
             $login_pass = $_POST["login-password"];
 
-            include './setting.php';
+            include '../pages/setting.php';
 
             $sql = "SELECT * FROM tb_user WHERE TenDangNhap = '$login_name' LIMIT 1";
             $result = $conn->query($sql);
@@ -134,7 +134,7 @@
         </div>
     </div>
     <?php
-        include './script_libary.php';
+        include '../pages/script_libary.php';
     ?>
 </body>
 </html>

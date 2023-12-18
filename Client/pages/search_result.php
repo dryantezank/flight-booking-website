@@ -4,7 +4,7 @@
     
     <title>Kết quả tìm kiếm chuyến bay</title>
     <?php
-        include './link_libary.php';
+        include '../pages/link_libary.php';
     ?>
 </head>
 <body>
@@ -17,7 +17,7 @@
             $departureDate = $_POST['departureDate'];
             $seat = $_POST['seat'];
 
-            include './setting.php';
+            include '../pages/setting.php';
         //    $sql = "SELECT "
 
             $result = $conn -> query($sql);
@@ -54,7 +54,7 @@
         <a href="./home.php#booking" class="btn btn-primary mt-3">Quay lại trang tìm kiếm</a>
     </div>
    <?php
-    include './script_libary.php';
+    include '../pages/script_libary.php';
    ?>
 </body>
 </html>

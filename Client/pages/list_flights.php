@@ -1,5 +1,5 @@
 <?php
-include './setting.php';
+include '../pages/setting.php';
 
 // Truy vấn dữ liệu từ bảng tb_ChuyenBay và lấy ảnh nơi đến
 $sql = "SELECT
