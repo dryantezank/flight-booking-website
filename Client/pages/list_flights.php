@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="col-md-4">
                 <div class="card mb-4">
-                    <img src="./images/locate/'.$row["TenAnhDiemDen"] . '" class="card-img-top" alt="'.$row["DiemDen"].'" />
+                    <img src="../assets/images/locate/'.$row["TenAnhDiemDen"] . '" class="card-img-top" alt="'.$row["DiemDen"].'" />
                     <div class="card-body">
                         <h3 class="card-title">'.$row["DiemKhoiHanh"].' - '.$row["DiemDen"].'</h3>
                         <p class="card-text">Ngày Đi: '.date("d/m/Y", strtotime($row["ThoiGianKhoiHanh"])).'</p>

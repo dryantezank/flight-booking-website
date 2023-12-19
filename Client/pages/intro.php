@@ -24,7 +24,7 @@
 
             <div class="col-md-4">  
                 <div class="card mb-4">
-                    <img src="../assets/images/tienich3.png" alt="Tien ich 3" class="card-img-top">
+                    <img src="../assets/images/tienich/tienich3.png" alt="Tien ich 3" class="card-img-top">
                     <div class="card-body">
                         <h3 class="card-title">Tận tình</h3>
                         <p class="card-text btn btn-link">Xem thêm</p>
