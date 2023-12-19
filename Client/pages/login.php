@@ -1,140 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký / Đăng nhập</title>
-    <?php
-        include './link_libary.php';
-    ?>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <style>
-        body{
-            background-color: #f8f9fa;
-        }
-
-        .container
-        {
-            margin-top: 100px;
-        }
-    </style>
+    <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
 <body>
-    <?php
-    // kiểm tra phương thức truy xuất đến trang hiện tại có phải là post hay ko
-        if($_SERVER["REQUEST_METHOD" == "POST"])
-        {
-            $login_name = $_POST["login-username"];
-            $login_pass = $_POST["login-password"];
 
-            include './setting.php';
-
-            $sql = "SELECT * FROM tb_user WHERE TenDangNhap = '$login_name' LIMIT 1";
-            $result = $conn->query($sql);
-            if ($result && $result->num_rows > 0)
-            { //nếu tìm thấy user thì kiểm tra password
-                $row = $result->fetch_assoc();
-
-                //hàm so sánh mật khẩu nhập vào với mật khẩu được mã hóa trong CSDL, tự động giải mã và so sánh
-                if (password_verify($login_pass, $row['MatKhau']))
-                {
-                    // tạo và gán giá trị cho các biến session
-                    $_SESSION["lg-username"] = $row['TenDangNhap'];
-                    $_SESSION["role"] = $row['Role'];
-
-                    //nếu đăng nhập thành công thì chuyển về trang home
-                    header("Location: ./home.php");
-                    exit();
-                }
-                else{ //thông báo lỗi đăng nhập
-                    echo'<div class="alert alert-danger"> Tên đăng nhập hoặc mật khẩu không đúng.</div>';
-                }
-            }else{
-                echo '<div class = "alert alert-danger">Tên đăng nhập hoặc mật khẩu không đúng.</div>';
-            }
-        }
-    ?>
-
+<main>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        <ul class="nav nav-tabs card-header-tabs">
-                            <li class="nav-item">
-                                <a href="#login" class="nav-link active" id="login-tab" data-toggle="tab" role="tab"
-                                aria-controls="login" aria-selected="true">
-                                Đăng nhập
-                                </a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a href="#register" class="nav-link" id="login-tab" data-toggle="tab" role="tab"
-                                aria-controls="register" aria-selected="false">
-                                    Đăng ký
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-                    <div class="card-body">
-                        <div class="tab-contend">
-                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                                <h5 class="card-title">Đăng nhập</h5>
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <label for="login-username">Tài khoản</label>
-                                        <input type="text" class="form-control" id="login-username" name="login-username">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="../index.php" class="logo d-flex align-items-center w-auto">
+                                <img src="https://th.bing.com/th/id/OIP.EZ-T11l0le6850YVjX0J3wAAAA?rs=1&pid=ImgDetMain" width="200px" alt="">
+                            </a>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                    <p class="text-center small">Enter your username & password to login</p>
+                                </div>
+
+                                <form class="row g-3 needs-validation" novalidate>
+
+                                    <div class="col-12">
+                                        <label for="yourUsername" class="form-label">Username</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" name="username" class="form-control" id="yourUsername" required>
+                                            <div class="invalid-feedback">Please enter your username.</div>
+                                        </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="login-password">Mật khẩu</label>
-                                        <input type="password" class="form-control" id="login-password" name="login-password">
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control" id="yourPassword" required>
+                                        <div class="invalid-feedback">Please enter your password!</div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">
-                                        Đăng nhập
-                                    </button>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Login</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Don't have account? <a href="./register.php">Create an account</a></p>
+                                    </div>
                                 </form>
-                            </div>
 
-                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-                                <h5 class="card-title">Đăng ký</h5>
-                                <form>
-                                    <div class="form-group">
-                                        <label for="register-username">Tên tài khoản</label>
-                                        <input type="text" class="form-control" id="register-username">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="register-password">Mật khẩu</label>
-                                        <input type="password" class="form-control" id="register-password">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="regiter-email">Địa chỉ Email</label>
-                                        <input type="email" class="form-control" id="register-email">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="register-fullname">Họ tên</label>
-                                        <input type="text" class="form-control" id="register-fullname">
-                                    </div>
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Đăng ký
-                                    </button>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+        </section>
+
     </div>
-    <?php
-        include './script_libary.php';
-    ?>
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
+
 </html>
